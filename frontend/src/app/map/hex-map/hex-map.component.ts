@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit,} from '@angular/core';
+import { HexComponent } from '../hex/hex.component';
 
 @Component({
   selector: 'app-hex-map',
@@ -9,7 +10,7 @@ export class HexMapComponent implements OnInit {
   grassColor: string = "#536722";
   waterColor: string = "#375353";
   map: number = 1;
-  allHexes!: Array<any>
+  allHexes!: Array<HexComponent>
 
   constructor(private elRef:ElementRef) { 
 
