@@ -1,0 +1,36 @@
+/* --hex-width: 100px; 
+--hex-between: 10px;
+
+  Other hexagon dimentions 
+--hex-height: calc(var(--hex-width) / 1.73);
+--hex-margin: calc(var(--hex-width) / 2);
+--hex-border: calc(var(--hex-margin) / 1.73  );
+--hex-transition: all .2s ease; */
+.map-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  align-items: center;
+  position: relative;
+  padding-top: 35px;
+  padding-left: 50px;
+  padding-bottom: 15px;
+  
+}
+
+.row,
+.rowEven {
+  display: inline-flex;
+  padding-top: 5px;
+  margin-top: -32px;
+  overflow: hidden;
+}
+
+.row:nth-child(even),
+.rowEven {
+  margin-left: 1px;
+}
+
+.noEffect {
+  pointer-events: none;
+}
