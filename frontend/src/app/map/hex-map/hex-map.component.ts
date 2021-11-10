@@ -25,6 +25,7 @@ export class HexMapComponent implements OnInit {
     this.getSpecficHex(2);
   }
 
+
   getAllHexes(){
     this.allHexes = this.elRef.nativeElement.querySelectorAll('app-hex');
     //console.log(this.allHexes);
@@ -40,5 +41,12 @@ export class HexMapComponent implements OnInit {
   getSniperSpawnPoints() {
     let sniperSpawns = this.elRef.nativeElement.querySelectorAll('.sniperSpawn');
     console.log(sniperSpawns);
+  }
+
+  addText() {
+    for(let i = 0; i < this.allHexes.length; i++){
+      let hex = this.allHexes[i];
+      hex.text = "1";
+    }
   }
 }

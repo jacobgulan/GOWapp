@@ -3,17 +3,16 @@
         <div class="row">
             <ng-container *ngFor="let _ of [].constructor(8); let j = index">
                 <div *ngIf="i % 2 == 0">
-                    <app-hex color="{{ grassColor }}" text="{{createText()}}"></app-hex>
+                    <app-hex color="{{ grassColor }}" text=""></app-hex>
                 </div>
                 <div *ngIf="i % 2 == 1 && j >= 1">
-                    <app-hex color="{{ grassColor }}" text="{{createText()}}"></app-hex>
+                    <app-hex color="{{ grassColor }}" text=""></app-hex>
                 </div>
             </ng-container>
         </div>
     </ng-container>
-</div> -->
-
-<div *ngIf="map == 1"> 
+</div>  -->
+ 
   <div class="map-container">
     <div class="row" id="test">
       <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
@@ -102,7 +101,7 @@
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
     </div>
   </div>
-</div>
+
 
 <div *ngIf="map == 2">
   <div class="map-container">
