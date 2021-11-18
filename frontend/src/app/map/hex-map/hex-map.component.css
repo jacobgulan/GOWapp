@@ -1,21 +1,20 @@
-/* --hex-width: 100px; 
---hex-between: 10px;
-
-  Other hexagon dimentions 
---hex-height: calc(var(--hex-width) / 1.73);
---hex-margin: calc(var(--hex-width) / 2);
---hex-border: calc(var(--hex-margin) / 1.73  );
---hex-transition: all .2s ease; */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 14px;
+}
 .map-container {
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
   align-items: center;
+  justify-content: flex-end;
   position: relative;
   padding-top: 35px;
   padding-left: 50px;
   padding-bottom: 15px;
-  zoom: 1.2;
+  zoom: 1.0;
 }
 
 .row,
@@ -33,4 +32,33 @@
 
 .noEffect {
   pointer-events: none;
+}
+
+
+/* Jocab's css */
+button {
+  padding: 0.5em 1em 0.5em 1em;
+  color: white;
+  background-color: #317efb;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }

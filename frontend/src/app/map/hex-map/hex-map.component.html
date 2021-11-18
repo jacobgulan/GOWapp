@@ -12,99 +12,114 @@
         </div>
     </ng-container>
 </div>  -->
-<div *ngIf="map == 1">
+
+<div *ngIf="map == 1" class="container">
+  <div>
+    <h2>Actions</h2>
+    <button id="movement" #movement>Movement</button>
+    <button id="fire" #fire>Fire</button>
+    <button id="reload" #reload>Reload</button>
+
+    <button id="confirm" #confirm>Confirm</button>
+
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <strong>Attention!</strong> Insert warning message here
+    </div>
+    <div class="test"></div>
+  </div>
   <div class="map-container">
     <div class="row" id="test">
       <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="02"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="01"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn" class="sniperSpawn"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="sniperSpawn(1)" class="sniperSpawn"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="02"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="sniperSpawn(2)" class="sniperSpawn"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="sniperSpawn(3)" class="sniperSpawn"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="01"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="sniperSpawn(4)" class="sniperSpawn"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="07"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="07"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="06"></app-hex>
-      <app-hex color="{{ grassColor }}" text="05"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="06"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="05"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="04"></app-hex>
-      <app-hex color="{{ grassColor }}" text="03"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="04"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="03"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="14"></app-hex>
-      <app-hex color="{{ grassColor }}" text="13"></app-hex>
-      <app-hex color="{{ grassColor }}" text="12"></app-hex>
-      <app-hex color="{{ grassColor }}" text="11"></app-hex>
-      <app-hex color="{{ grassColor }}" text="10"></app-hex>
-      <app-hex color="{{ grassColor }}" text="09"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="14"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="13"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="12"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="11"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="10"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="09"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="08"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="08"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="19"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="18"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="19"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="18"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="17"></app-hex>
-      <app-hex color="{{ grassColor }}" text="16"></app-hex>
-      <app-hex color="{{ grassColor }}" text="15"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="17"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="16"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="15"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="27"></app-hex>
-      <app-hex color="{{ grassColor }}" text="26"></app-hex>
-      <app-hex color="{{ grassColor }}" text="25"></app-hex>
-      <app-hex color="{{ grassColor }}" text="24"></app-hex>
-      <app-hex color="{{ grassColor }}" text="23"></app-hex>
-      <app-hex color="{{ grassColor }}" text="22"></app-hex>
-      <app-hex color="{{ grassColor }}" text="21"></app-hex>
-      <app-hex color="{{ grassColor }}" text="20"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="27"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="26"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="25"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="24"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="23"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="22"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="21"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="20"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="30"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="29"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="30"></app-hex>
       <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
       <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="28"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="29"></app-hex>
+      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
+      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="28"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="37"></app-hex>
-      <app-hex color="{{ grassColor }}" text="36"></app-hex>
-      <app-hex color="{{ grassColor }}" text="35"></app-hex>
-      <app-hex color="{{ grassColor }}" text="34"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="37"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="36"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="35"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="34"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="33"></app-hex>
-      <app-hex color="{{ grassColor }}" text="32"></app-hex>
-      <app-hex color="{{ grassColor }}" text="31"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="33"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="32"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="31"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="43"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="42"></app-hex>
-      <app-hex color="{{ grassColor }}" text="41"></app-hex>
-      <app-hex color="{{ grassColor }}" text="40"></app-hex>
-      <app-hex color="{{ grassColor }}" text="39"></app-hex>
-      <app-hex color="{{ grassColor }}" text="38"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="43"></app-hex>
+      <app-hex color="{{ grassColor }}" text="soldierSpawn(5)"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="42"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="41"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="40"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="39"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="38"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="46"></app-hex>
-      <app-hex color="{{ grassColor }}" text="45"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="44"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="46"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="45"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="soldierSpawn(1)"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="soldierSpawn(2)"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="soldierSpawn(3)"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="soldierSpawn(4)"></app-hex>
+      <app-hex (location)="getId($event)" color="{{ grassColor }}" text="44"></app-hex>
       <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
     </div>
   </div>
 </div>
 
 
-<div *ngIf="map == 2">
+<!-- <div *ngIf="map == 2">
   <div class="map-container">
     <div class="row">
       <app-hex color="{{ grassColor }}" text="sniperSpawn" class="sniperSpawn"></app-hex>
@@ -284,5 +299,4 @@
       <app-hex color="{{ grassColor }}" text="sniperSpawn"></app-hex>
     </div>
   </div>
-</div>
-
+</div> -->

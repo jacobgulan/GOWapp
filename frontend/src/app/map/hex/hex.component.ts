@@ -9,6 +9,7 @@ export class HexComponent implements OnInit {
   @Input() color!: string;
   @Input() text!: string;
   @Input() id!: string;
+  @Output() location = new EventEmitter<string>();
 
   
   constructor() { }
@@ -17,10 +18,7 @@ export class HexComponent implements OnInit {
   }
 
   onClick(text: string){
-    if(Number(text)){
-      console.log(parseInt(text));
-    }else{
-      console.log(text);
-    }
+    this.location.emit(text);
   }
+
 }
