@@ -57,22 +57,22 @@ export class HexMapComponent implements OnInit {
     this.activate(target);
   }
 
-  getSpecficHex(index: number) {
-    if (index < this.allHexes.length) {
-      let hex = this.allHexes[index];
-      console.log(hex);
-    }
-  }
+  // getSpecficHex(index: number) {
+  //   if (index < this.allHexes.length) {
+  //     let hex = this.allHexes[index];
+  //     console.log(hex);
+  //   }
+  // }
 
-  getSniperSpawnPoints() {
-    let sniperSpawns =
-      this.elRef.nativeElement.querySelectorAll('.sniperSpawn');
-    console.log(sniperSpawns);
-  }
+  // getSniperSpawnPoints() {
+  //   let sniperSpawns =
+  //     this.elRef.nativeElement.querySelectorAll('.sniperSpawn');
+  //   console.log(sniperSpawns);
+  // }
 
-  getId(e: any) {
-    this.activate(e);
-  }
+  // getId(e: any) {
+  //   this.activate(e);
+  // }
 
   /* Jacobs code */
   // Text for movement
