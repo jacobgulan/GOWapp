@@ -1,3 +1,23 @@
-<div class="hexmap">
-    <app-hex-map></app-hex-map>
-</div>
+<div class="app">
+    <header>
+      <section>
+        <h1></h1>
+        <h2></h2>
+      </section>
+      <nav>
+        <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/game">Game</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  
+    <footer>
+      <a href="https://www.google.com/">www.google.com</a>
+    </footer>
+  
+  </div>

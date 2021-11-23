@@ -1,0 +1,14 @@
+<body>
+    <h1>Ghosts of War: Hunt for Pavlichenko</h1>
+    <p>Ghosts of War: Hunt for Pavlichenko is a competitive WWII themed board game where a Soviet Sniper and a team of Nazi Soldiers vie against each other to achieve victory.<br><br>The game is split up into two teams: the Sniper and the Soldiers.<br><br>The Sniper team only has one player and their win condition is to eliminate all of the Soldiers. The Soldiers constitute the remaining players (up to 4) and their win condition is to capture the Sniper.</p>
+    <form [formGroup]="form" (ngSubmit)="onClickMe()">
+        <div id="newDiv">
+        <p>
+        
+            <label id="test">Enter Number of Players:</label>
+            <input type="text" formControlName="playerCount">
+        </p>
+    </div>
+        <button class="startBtn" type="submit" onclick="onClickMe" >Start Game</button></form>
+    </body>
+    
