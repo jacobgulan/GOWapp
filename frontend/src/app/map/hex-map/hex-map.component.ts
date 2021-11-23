@@ -51,6 +51,12 @@ export class HexMapComponent implements OnInit {
     //console.log(this.allHexes);
   }
 
+  getHex(e: any){
+    let target = e.target.textContent;
+    console.log(target);
+    this.activate(target);
+  }
+
   getSpecficHex(index: number) {
     if (index < this.allHexes.length) {
       let hex = this.allHexes[index];
