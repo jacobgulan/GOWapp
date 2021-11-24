@@ -32,6 +32,7 @@ export class HexMapComponent implements OnInit {
 
   constructor(
     private elRef: ElementRef) {
+      localStorage.setItem('moving','false');
      }
 
   ngOnInit(): void { 
@@ -91,15 +92,16 @@ export class HexMapComponent implements OnInit {
       return;
     }
 
-    if (!this.moving) {
+    if (localStorage.getItem('moving')=='false') {
       // TODO: Implement as disappearing message
       para.textContent = 'Movement action selected';
       document.body.appendChild(para);
-      this.moving = true;
+      localStorage.setItem('moving','true');
     } else {
       para.textContent = 'Movement action deselected';
       document.body.appendChild(para);
-      this.moving = false;
+      localStorage.setItem('moving','false');
+
     }
   }
 
@@ -128,7 +130,7 @@ export class HexMapComponent implements OnInit {
   reloadParagraph() {
     let para = document.createElement('p');
 
-    if (this.moving) {
+    if (localStorage.getItem('moving')=='true') {
       para.textContent = 'Please deselect movement action';
       document.body.appendChild(para);
       return;
@@ -145,13 +147,13 @@ export class HexMapComponent implements OnInit {
   // Confirm action (does not confirm reload)
   confirm() {
     let para = document.createElement('p');
-    if (this.moving) {
+    if (localStorage.getItem('moving')=='true') {
       para.textContent =
         'Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
       document.body.appendChild(para);
       this.currHex = this.nextHex;
       this.nextHex = -1;
-      this.moving = false;
+      localStorage.setItem('moving','false');
     } else if (this.firing) {
       para.textContent =
         'Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
@@ -168,16 +170,16 @@ export class HexMapComponent implements OnInit {
   // Activate hex
   activate(hexNum: any) {
     let para = document.createElement('p');
-
+    var value = localStorage.getItem('moving')
     if (this.currHex == -1) {	// Select starting location
       this.currHex = hexNum
       para.textContent = ('Starting at Hex ' + hexNum);
       document.body.appendChild(para);
-    } else if (this.nextHex == hexNum && this.moving) {	// Deselect hex to move to
+    } else if (this.nextHex == hexNum && value =='true') {	// Deselect hex to move to
       this.nextHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
       document.body.appendChild(para);
-    } else if (this.nextHex != hexNum && this.moving) {	// Select hex to move to
+    } else if (this.nextHex != hexNum && value =='true') {	// Select hex to move to
       this.nextHex = hexNum
       para.textContent = ('Activated Hex ' + hexNum);
       document.body.appendChild(para);
