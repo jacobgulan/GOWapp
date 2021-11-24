@@ -42,10 +42,10 @@ export class HexMapComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.fire.nativeElement.addEventListener('click', this.fireParagraph);
-    this.reload.nativeElement.addEventListener('click', this.reloadParagraph);
-    this.confirmed.nativeElement.addEventListener('click', this.confirm);
-    this.movement.nativeElement.addEventListener('click', this.movementParagraph);
+    this.fire.nativeElement.addEventListener('click', this.fireParagraph.bind(this));
+    this.reload.nativeElement.addEventListener('click', this.reloadParagraph.bind(this));
+    this.confirmed.nativeElement.addEventListener('click', this.confirm.bind(this));
+    this.movement.nativeElement.addEventListener('click', this.movementParagraph.bind(this));
     // this.getAllHexes(); /* This method has to come first */
   }
 
@@ -124,7 +124,8 @@ export class HexMapComponent implements OnInit {
     } else {
       para.textContent = ('Reloaded gun');
       document.body.appendChild(para);
-      //this.showAlert("testing");
+
+      this.showAlert("testing");
       /*
       var alertBox = document.getElementById('alert');
       var errorMsg = document.getElementById('error');
