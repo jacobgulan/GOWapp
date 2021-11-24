@@ -22,7 +22,6 @@ export class HexMapComponent implements OnInit {
   currHex = -1;
   nextHex = -1;
   firingHex = -1;
-  moving = false;
   firing = false;
   @ViewChild('movement') movement!: ElementRef;
   @ViewChild('fire') fire!: ElementRef;
@@ -108,7 +107,7 @@ export class HexMapComponent implements OnInit {
   // Text for firing
   fireParagraph() {
     let para = document.createElement('p');
-    if (this.moving) {
+    if (localStorage.getItem('moving')=='true') {
       para.textContent = 'Please deselect movement action';
       document.body.appendChild(para);
       return;
@@ -170,16 +169,16 @@ export class HexMapComponent implements OnInit {
   // Activate hex
   activate(hexNum: any) {
     let para = document.createElement('p');
-    var value = localStorage.getItem('moving')
+    var moving = localStorage.getItem('moving')
     if (this.currHex == -1) {	// Select starting location
       this.currHex = hexNum
       para.textContent = ('Starting at Hex ' + hexNum);
       document.body.appendChild(para);
-    } else if (this.nextHex == hexNum && value =='true') {	// Deselect hex to move to
+    } else if (this.nextHex == hexNum && moving =='true') {	// Deselect hex to move to
       this.nextHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
       document.body.appendChild(para);
-    } else if (this.nextHex != hexNum && value =='true') {	// Select hex to move to
+    } else if (this.nextHex != hexNum && moving =='true') {	// Select hex to move to
       this.nextHex = hexNum
       para.textContent = ('Activated Hex ' + hexNum);
       document.body.appendChild(para);
