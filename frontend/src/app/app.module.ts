@@ -6,6 +6,10 @@ import { HexComponent } from './map/hex/hex.component';
 import { HexMapComponent } from './map/hex-map/hex-map.component';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,
+    ReactiveFormsModule    ,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
