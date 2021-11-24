@@ -39,10 +39,11 @@ export class HexMapComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.fire.nativeElement.addEventListener('click', this.fireParagraph);
-    this.reload.nativeElement.addEventListener('click', this.reloadParagraph);
-    this.confirmed.nativeElement.addEventListener('click', this.confirm);
-    this.movement.nativeElement.addEventListener('click', this.movementParagraph);
+    this.fire.nativeElement.addEventListener('click', this.fireParagraph.bind(this));
+    this.reload.nativeElement.addEventListener('click', this.reloadParagraph.bind(this));
+    this.confirmed.nativeElement.addEventListener('click', this.confirm.bind(this));
+    this.movement.nativeElement.addEventListener('click', this.movementParagraph.bind(this));
+    // this.getAllHexes(); /* This method has to come first */
   }
 
   getHex(e: any){
@@ -76,7 +77,6 @@ export class HexMapComponent implements OnInit {
       para.textContent = 'Movement action deselected';
       document.getElementById('logInfo')?.appendChild(para);
       localStorage.setItem('moving','false');
-
     }
   }
 
@@ -114,8 +114,17 @@ export class HexMapComponent implements OnInit {
       document.getElementById('logInfo')?.appendChild(para);
       return;
     } else {
-      para.textContent = 'Reloaded gun';
+      para.textContent = ('Reloaded gun');
       document.getElementById('logInfo')?.appendChild(para);
+
+      this.showAlert("testing");
+      /*
+      var alertBox = document.getElementById('alert');
+      var errorMsg = document.getElementById('error');
+      alertBox!.style.visibility = "visible";
+      errorMsg!.innerHTML = "hey";
+      */
+      
     }
   }
 
@@ -169,7 +178,15 @@ export class HexMapComponent implements OnInit {
     } else {	// Ignore input
       para.textContent = ('Please select an action first');
       document.getElementById('logInfo')?.appendChild(para);
-    }
+    }    
 
   }
+
+  showAlert(msg: any) {
+    var alertBox = document.getElementById('alert');
+    var errorMsg = document.getElementById('error');
+    alertBox!.style.visibility = "visible";
+    errorMsg!.innerHTML = msg;
+  }
+
 }
