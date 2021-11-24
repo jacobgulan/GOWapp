@@ -43,7 +43,6 @@ export class HexMapComponent implements OnInit {
     this.reload.nativeElement.addEventListener('click', this.reloadParagraph.bind(this));
     this.confirmed.nativeElement.addEventListener('click', this.confirm.bind(this));
     this.movement.nativeElement.addEventListener('click', this.movementParagraph.bind(this));
-    // this.getAllHexes(); /* This method has to come first */
   }
 
   getHex(e: any){
