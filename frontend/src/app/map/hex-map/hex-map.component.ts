@@ -85,7 +85,6 @@ export class HexMapComponent implements OnInit {
       para.textContent = 'Movement action deselected';
       document.body.appendChild(para);
       localStorage.setItem('moving','false');
-
     }
   }
 
@@ -123,8 +122,16 @@ export class HexMapComponent implements OnInit {
       document.body.appendChild(para);
       return;
     } else {
-      para.textContent = 'Reloaded gun';
+      para.textContent = ('Reloaded gun');
       document.body.appendChild(para);
+      //this.showAlert("testing");
+      /*
+      var alertBox = document.getElementById('alert');
+      var errorMsg = document.getElementById('error');
+      alertBox!.style.visibility = "visible";
+      errorMsg!.innerHTML = "hey";
+      */
+      
     }
   }
 
@@ -178,7 +185,15 @@ export class HexMapComponent implements OnInit {
     } else {	// Ignore input
       para.textContent = ('Please select an action first');
       document.body.appendChild(para);
-    }
+    }    
 
   }
+
+  showAlert(msg: any) {
+    var alertBox = document.getElementById('alert');
+    var errorMsg = document.getElementById('error');
+    alertBox!.style.visibility = "visible";
+    errorMsg!.innerHTML = msg;
+  }
+
 }

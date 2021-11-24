@@ -19,12 +19,11 @@
     <button id="movement" #movement>Movement</button>
     <button id="fire" #fire>Fire</button>
     <button id="reload" #reload>Reload</button>
-
     <button id="confirm" #confirm>Confirm</button>
 
-    <div class="alert">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <strong>Attention!</strong> Insert warning message here
+    <div class="alert" id="alert">
+      <span class="closebtn" onclick="this.parentElement.style.visibility='hidden';">&times;</span>
+      <label id="error">Attention! Insert warning message here</label>
     </div>
   </div>
   <div class="map-container" (click)="getHex($event)">
