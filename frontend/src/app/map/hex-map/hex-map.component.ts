@@ -31,30 +31,36 @@ export class HexMapComponent implements OnInit {
   @ViewChild('test') test!: ElementRef;
 
   constructor(
-    private elRef: ElementRef) { }
+    private elRef: ElementRef) {
+     }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+  }
+
+  ngAfterContentInit(){
+
+  }
 
   ngAfterViewInit() {
-    this.getAllHexes(); /* This method has to come first */
+    this.fire.nativeElement.addEventListener('click', this.fireParagraph);
+    this.reload.nativeElement.addEventListener('click', this.reloadParagraph);
+    this.confirmed.nativeElement.addEventListener('click', this.confirm);
     this.movement.nativeElement.addEventListener(
       'click',
       this.movementParagraph
     );
-    this.fire.nativeElement.addEventListener('click', this.fireParagraph);
-    this.reload.nativeElement.addEventListener('click', this.reloadParagraph);
-    this.confirmed.nativeElement.addEventListener('click', this.confirm);
+    this.getAllHexes(); /* This method has to come first */
   }
 
   getAllHexes() {
-    this.allHexes = this.elRef.nativeElement.querySelectorAll('app-hex');
+    this.allHexes = this.elRef.nativeElement.querySelectorAll('app-hex div');
     //console.log(this.allHexes);
   }
 
   getHex(e: any){
     let target = e.target.textContent;
     console.log(target);
-    this.activate(target);
+    this.activate(parseInt(target));
   }
 
   // getSpecficHex(index: number) {
@@ -89,7 +95,6 @@ export class HexMapComponent implements OnInit {
       // TODO: Implement as disappearing message
       para.textContent = 'Movement action selected';
       document.body.appendChild(para);
-
       this.moving = true;
     } else {
       para.textContent = 'Movement action deselected';

@@ -28,7 +28,7 @@
     </div>
     <div class="test"></div>
   </div>
-  <div class="map-container" (click) = "getHex($event)">
+  <div class="map-container" (click)="getHex($event)">
     <div class="row" id="test">
       <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
       <app-hex color="{{ grassColor }}" text="sniperSpawn(1)" class="sniperSpawn"></app-hex>

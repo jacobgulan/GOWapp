@@ -17,8 +17,4 @@ export class HexComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(text: string){
-    this.location.emit(text);
-  }
-
 }
