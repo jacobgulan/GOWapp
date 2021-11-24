@@ -34,6 +34,18 @@
   pointer-events: none;
 }
 
+#logInfo {
+  border: 1px solid gray;
+  min-height: 50px;  /* if you want Flexible textarea/div then give min-height instead of height */
+  overflow: auto; 
+  padding: 2px;
+  resize: vertical;
+  width: 310px;
+  font-size:15px;
+  max-height: 300px;
+  background-color: white;
+  color:#000;
+}
 
 /* Jocab's css */
 button {
