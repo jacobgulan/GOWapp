@@ -45,40 +45,25 @@ export class HexMapComponent implements OnInit {
     this.fire.nativeElement.addEventListener('click', this.fireParagraph);
     this.reload.nativeElement.addEventListener('click', this.reloadParagraph);
     this.confirmed.nativeElement.addEventListener('click', this.confirm);
-    this.movement.nativeElement.addEventListener(
-      'click',
-      this.movementParagraph
-    );
-    this.getAllHexes(); /* This method has to come first */
+    this.movement.nativeElement.addEventListener('click', this.movementParagraph);
+    // this.getAllHexes(); /* This method has to come first */
   }
 
-  getAllHexes() {
-    this.allHexes = this.elRef.nativeElement.querySelectorAll('app-hex div');
-    //console.log(this.allHexes);
-  }
+  // getAllHexes() {
+  //   this.allHexes = this.elRef.nativeElement.querySelectorAll('app-hex div');
+  //   //console.log(this.allHexes);
+  // }
 
   getHex(e: any){
     let target = e.target.textContent;
-    console.log(target);
-    this.activate(parseInt(target));
+    if(!isNaN(target)){
+      this.activate(parseInt(target));
+    }
+    else if (target.indexOf('water') == -1 && target.indexOf('woods') == -1){
+      this.activate(target);
+    }
+
   }
-
-  // getSpecficHex(index: number) {
-  //   if (index < this.allHexes.length) {
-  //     let hex = this.allHexes[index];
-  //     console.log(hex);
-  //   }
-  // }
-
-  // getSniperSpawnPoints() {
-  //   let sniperSpawns =
-  //     this.elRef.nativeElement.querySelectorAll('.sniperSpawn');
-  //   console.log(sniperSpawns);
-  // }
-
-  // getId(e: any) {
-  //   this.activate(e);
-  // }
 
   /* Jacobs code */
   // Text for movement

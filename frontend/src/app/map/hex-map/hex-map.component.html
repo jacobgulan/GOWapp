@@ -26,94 +26,93 @@
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <strong>Attention!</strong> Insert warning message here
     </div>
-    <div class="test"></div>
   </div>
   <div class="map-container" (click)="getHex($event)">
     <div class="row" id="test">
+      <app-hex text="water" color="{{ waterColor }}" class="noEffect"></app-hex>
+      <app-hex text="sniperSpawn(1)" color="{{ grassColor }}" class="sniperSpawn"></app-hex>
+      <app-hex text="02" color="{{ grassColor }}"></app-hex>
+      <app-hex text="sniperSpawn(2)" color="{{ grassColor }}" class="sniperSpawn"></app-hex>
+      <app-hex text="sniperSpawn(3)" color="{{ grassColor }}" class="sniperSpawn"></app-hex>
+      <app-hex text="01" color="{{ grassColor }}"></app-hex>
+      <app-hex text="sniperSpawn(4)" color="{{ grassColor }}" class="sniperSpawn"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
+    </div>
+    <div class="row">
+      <app-hex text="07" color="{{ grassColor }}" text="07"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
+      <app-hex text="06" color="{{ grassColor }}"></app-hex>
+      <app-hex text="05" color="{{ grassColor }}"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
+      <app-hex text="04" color="{{ grassColor }}"></app-hex>
+      <app-hex text="03" color="{{ grassColor }}"></app-hex>
+    </div>
+    <div class="row">
+      <app-hex text="14" color="{{ grassColor }}"></app-hex>
+      <app-hex text="13" color="{{ grassColor }}"></app-hex>
+      <app-hex text="12" color="{{ grassColor }}"></app-hex>
+      <app-hex text="11" color="{{ grassColor }}"></app-hex>
+      <app-hex text="10" color="{{ grassColor }}"></app-hex>
+      <app-hex text="09" color="{{ grassColor }}"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
+      <app-hex text="08" color="{{ grassColor }}"></app-hex>
+    </div>
+    <div class="row">
+      <app-hex text="19" color="{{ grassColor }}"></app-hex>
       <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn(1)" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="02"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn(2)" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn(3)" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="01"></app-hex>
-      <app-hex color="{{ grassColor }}" text="sniperSpawn(4)" class="sniperSpawn"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
+      <app-hex text="18" color="{{ grassColor }}"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
+      <app-hex text="17" color="{{ grassColor }}"></app-hex>
+      <app-hex text="16" color="{{ grassColor }}"></app-hex>
+      <app-hex text="15" color="{{ grassColor }}"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="07"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="06"></app-hex>
-      <app-hex color="{{ grassColor }}" text="05"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="04"></app-hex>
-      <app-hex color="{{ grassColor }}" text="03"></app-hex>
+      <app-hex text="27" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="26" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="25" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="24" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="23" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="22" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="21" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="20" color="{{ grassColor }}" ></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="14"></app-hex>
-      <app-hex color="{{ grassColor }}" text="13"></app-hex>
-      <app-hex color="{{ grassColor }}" text="12"></app-hex>
-      <app-hex color="{{ grassColor }}" text="11"></app-hex>
-      <app-hex color="{{ grassColor }}" text="10"></app-hex>
-      <app-hex color="{{ grassColor }}" text="09"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="08"></app-hex>
+      <app-hex text="30" color="{{ grassColor }}"></app-hex>
+      <app-hex text="water" color="{{ waterColor }}" class="noEffect"></app-hex>
+      <app-hex text="water" color="{{ waterColor }}" class="noEffect"></app-hex>
+      <app-hex text="29" color="{{ grassColor }}"></app-hex>
+      <app-hex text="water" color="{{ waterColor }}" class="noEffect"></app-hex>
+      <app-hex text="water" color="{{ waterColor }}" class="noEffect"></app-hex>
+      <app-hex text="28" color="{{ grassColor }}"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="19"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="18"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="17"></app-hex>
-      <app-hex color="{{ grassColor }}" text="16"></app-hex>
-      <app-hex color="{{ grassColor }}" text="15"></app-hex>
+      <app-hex text="37" color="{{ grassColor }}"></app-hex>
+      <app-hex text="36" color="{{ grassColor }}"></app-hex>
+      <app-hex text="35" color="{{ grassColor }}"></app-hex>
+      <app-hex text="34" color="{{ grassColor }}"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
+      <app-hex text="33" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="32" color="{{ grassColor }}" ></app-hex>
+      <app-hex text="31" color="{{ grassColor }}" ></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="27"></app-hex>
-      <app-hex color="{{ grassColor }}" text="26"></app-hex>
-      <app-hex color="{{ grassColor }}" text="25"></app-hex>
-      <app-hex color="{{ grassColor }}" text="24"></app-hex>
-      <app-hex color="{{ grassColor }}" text="23"></app-hex>
-      <app-hex color="{{ grassColor }}" text="22"></app-hex>
-      <app-hex color="{{ grassColor }}" text="21"></app-hex>
-      <app-hex color="{{ grassColor }}" text="20"></app-hex>
+      <app-hex text="43" color="{{ grassColor }}"></app-hex>
+      <app-hex text="soldierSpawn(5)" color="{{ grassColor }}"></app-hex>
+      <app-hex text="42" color="{{ grassColor }}"></app-hex>
+      <app-hex text="41" color="{{ grassColor }}"></app-hex>
+      <app-hex text="40" color="{{ grassColor }}"></app-hex>
+      <app-hex text="39" color="{{ grassColor }}"></app-hex>
+      <app-hex text="38" color="{{ grassColor }}"></app-hex>
     </div>
     <div class="row">
-      <app-hex color="{{ grassColor }}" text="30"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="29"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ waterColor }}" text="water" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="28"></app-hex>
-    </div>
-    <div class="row">
-      <app-hex color="{{ grassColor }}" text="37"></app-hex>
-      <app-hex color="{{ grassColor }}" text="36"></app-hex>
-      <app-hex color="{{ grassColor }}" text="35"></app-hex>
-      <app-hex color="{{ grassColor }}" text="34"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
-      <app-hex color="{{ grassColor }}" text="33"></app-hex>
-      <app-hex color="{{ grassColor }}" text="32"></app-hex>
-      <app-hex color="{{ grassColor }}" text="31"></app-hex>
-    </div>
-    <div class="row">
-      <app-hex color="{{ grassColor }}" text="43"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn(5)"></app-hex>
-      <app-hex color="{{ grassColor }}" text="42"></app-hex>
-      <app-hex color="{{ grassColor }}" text="41"></app-hex>
-      <app-hex color="{{ grassColor }}" text="40"></app-hex>
-      <app-hex color="{{ grassColor }}" text="39"></app-hex>
-      <app-hex color="{{ grassColor }}" text="38"></app-hex>
-    </div>
-    <div class="row">
-      <app-hex color="{{ grassColor }}" text="46"></app-hex>
-      <app-hex color="{{ grassColor }}" text="45"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn(1)"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn(2)"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn(3)"></app-hex>
-      <app-hex color="{{ grassColor }}" text="soldierSpawn(4)"></app-hex>
-      <app-hex color="{{ grassColor }}" text="44"></app-hex>
-      <app-hex color="{{ grassColor }}" text="woods" class="noEffect"></app-hex>
+      <app-hex text="46" color="{{ grassColor }}"></app-hex>
+      <app-hex text="45" color="{{ grassColor }}"></app-hex>
+      <app-hex text="soldierSpawn(1)" color="{{ grassColor }}"></app-hex>
+      <app-hex text="soldierSpawn(2)" color="{{ grassColor }}"></app-hex>
+      <app-hex text="soldierSpawn(3)" color="{{ grassColor }}"></app-hex>
+      <app-hex text="soldierSpawn(4)" color="{{ grassColor }}"></app-hex>
+      <app-hex text="44" color="{{ grassColor }}"></app-hex>
+      <app-hex text="woods" color="{{ grassColor }}" class="noEffect"></app-hex>
     </div>
   </div>
 </div>
