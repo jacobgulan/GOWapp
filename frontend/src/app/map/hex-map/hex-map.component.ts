@@ -61,14 +61,17 @@ export class HexMapComponent implements OnInit {
   movementParagraph() {
     let para = document.createElement('p');
 
+    if (this.currHex == -1) {
+      this.showAlert("Please select starting position first");
+      return;
+    }
+
     if (this.firing) {
-      para.textContent = 'Please deselect firing action';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.showAlert("Please deselect fire action")
       return;
     }
 
     if (localStorage.getItem('moving')=='false') {
-      // TODO: Implement as disappearing message
       para.textContent = 'Movement action selected';
       document.getElementById('logInfo')?.appendChild(para);
       localStorage.setItem('moving','true');
@@ -82,14 +85,18 @@ export class HexMapComponent implements OnInit {
   // Text for firing
   fireParagraph() {
     let para = document.createElement('p');
+
+    if (this.currHex == -1) {
+      this.showAlert("Please select starting position first");
+      return;
+    }
+
     if (localStorage.getItem('moving')=='true') {
-      para.textContent = 'Please deselect movement action';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.showAlert("Please deselect movement action")
       return;
     }
 
     if (!this.firing) {
-      // TODO: Implement as disappearing message
       para.textContent = 'Fire action selected';
       document.getElementById('logInfo')?.appendChild(para);
       this.firing = true;
@@ -104,33 +111,36 @@ export class HexMapComponent implements OnInit {
   reloadParagraph() {
     let para = document.createElement('p');
 
+    if (this.currHex == -1) {
+      this.showAlert("Please select starting position first");
+      return;
+    }
+
     if (localStorage.getItem('moving')=='true') {
-      para.textContent = 'Please deselect movement action';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.showAlert("Please deselect movement action")
       return;
     } else if (this.firing) {
-      para.textContent = 'Please deselect firing action';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.showAlert("Please deselect fire action")
       return;
     } else {
       para.textContent = ('Reloaded gun');
-      document.getElementById('logInfo')?.appendChild(para);
-
-      this.showAlert("testing");
-      /*
-      var alertBox = document.getElementById('alert');
-      var errorMsg = document.getElementById('error');
-      alertBox!.style.visibility = "visible";
-      errorMsg!.innerHTML = "hey";
-      */
-      
+      document.body.appendChild(para);
     }
   }
 
   // Confirm action (does not confirm reload)
   confirm() {
     let para = document.createElement('p');
+
+    if (this.currHex == -1) {
+      this.showAlert("Please select starting position first");
+      return;
+    }
+
     if (localStorage.getItem('moving')=='true') {
+      if (this.nextHex == -1) {
+        this.showAlert("Please select hex to move to");
+      }
       para.textContent =
         'Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
         document.getElementById('logInfo')?.appendChild(para);
@@ -138,26 +148,39 @@ export class HexMapComponent implements OnInit {
       this.nextHex = -1;
       localStorage.setItem('moving','false');
     } else if (this.firing) {
+      if (this.firingHex == -1) {
+        this.showAlert("Please select hex to fire at");
+      }
       para.textContent =
         'Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.firing = false;
       this.firingHex = -1;
     } else {
-      // TODO: Implement as disappearing text
-      para.textContent = 'Please select an action first';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.showAlert("Please select an action first")
     }
   }
 
   // Activate hex
   activate(hexNum: any) {
     let para = document.createElement('p');
-    var moving = localStorage.getItem('moving')
+    var moving = localStorage.getItem('moving');
+
+
     if (this.currHex == -1) {	// Select starting location
-      this.currHex = hexNum
-      para.textContent = ('Starting at Hex ' + hexNum);
-      document.getElementById('logInfo')?.appendChild(para);
+      
+      //this.showAlert(hexNum);
+
+      // Restrict to sniper spawn points
+      if ((hexNum == "sniperSpawn(1)") || (hexNum == "sniperSpawn(2)") ||
+          (hexNum == "sniperSpawn(3)") || (hexNum == "sniperSpawn(4)")) {
+            this.currHex = hexNum
+            para.textContent = ('Starting at Hex ' + hexNum);
+            document.getElementById('logInfo')?.appendChild(para);
+      } else {
+        this.showAlert("Please select sniper spawn point")
+      }
+
     } else if (this.nextHex == hexNum && moving =='true') {	// Deselect hex to move to
       this.nextHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
@@ -175,8 +198,7 @@ export class HexMapComponent implements OnInit {
       para.textContent = ('Activated Hex ' + hexNum);
       document.getElementById('logInfo')?.appendChild(para);
     } else {	// Ignore input
-      para.textContent = ('Please select an action first');
-      document.getElementById('logInfo')?.appendChild(para);
+      this.showAlert("Please select an action first")
     }    
 
   }
