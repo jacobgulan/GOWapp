@@ -75,10 +75,13 @@ export class HexMapComponent implements OnInit {
       para.textContent = 'Movement action selected';
       document.getElementById('logInfo')?.appendChild(para);
       localStorage.setItem('moving','true');
+      this.hideAlert()
+      
     } else {
       para.textContent = 'Movement action deselected';
       document.getElementById('logInfo')?.appendChild(para);
       localStorage.setItem('moving','false');
+      this.hideAlert()
     }
   }
 
@@ -100,10 +103,13 @@ export class HexMapComponent implements OnInit {
       para.textContent = 'Fire action selected';
       document.getElementById('logInfo')?.appendChild(para);
       this.firing = true;
+      this.hideAlert()
+
     } else {
       para.textContent = 'Fire action deselected';
       document.getElementById('logInfo')?.appendChild(para);
       this.firing = false;
+      this.hideAlert()
     }
   }
 
@@ -124,7 +130,8 @@ export class HexMapComponent implements OnInit {
       return;
     } else {
       para.textContent = ('Reloaded gun');
-      document.body.appendChild(para);
+      document.getElementById('logInfo')?.appendChild(para);
+      this.hideAlert()
     }
   }
 
@@ -140,6 +147,7 @@ export class HexMapComponent implements OnInit {
     if (localStorage.getItem('moving')=='true') {
       if (this.nextHex == -1) {
         this.showAlert("Please select hex to move to");
+        return;
       }
       para.textContent =
         'Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
@@ -147,15 +155,20 @@ export class HexMapComponent implements OnInit {
       this.currHex = this.nextHex;
       this.nextHex = -1;
       localStorage.setItem('moving','false');
+      this.hideAlert()
+
     } else if (this.firing) {
       if (this.firingHex == -1) {
         this.showAlert("Please select hex to fire at");
+        return;
       }
       para.textContent =
         'Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.firing = false;
       this.firingHex = -1;
+      this.hideAlert()
+
     } else {
       this.showAlert("Please select an action first")
     }
@@ -166,17 +179,14 @@ export class HexMapComponent implements OnInit {
     let para = document.createElement('p');
     var moving = localStorage.getItem('moving');
 
-
     if (this.currHex == -1) {	// Select starting location
-      
-      //this.showAlert(hexNum);
-
       // Restrict to sniper spawn points
       if ((hexNum == "sniperSpawn(1)") || (hexNum == "sniperSpawn(2)") ||
           (hexNum == "sniperSpawn(3)") || (hexNum == "sniperSpawn(4)")) {
             this.currHex = hexNum
             para.textContent = ('Starting at Hex ' + hexNum);
             document.getElementById('logInfo')?.appendChild(para);
+            this.hideAlert()
       } else {
         this.showAlert("Please select sniper spawn point")
       }
@@ -185,18 +195,24 @@ export class HexMapComponent implements OnInit {
       this.nextHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
       document.getElementById('logInfo')?.appendChild(para);
+
     } else if (this.nextHex != hexNum && moving =='true') {	// Select hex to move to
       this.nextHex = hexNum
       para.textContent = ('Activated Hex ' + hexNum);
       document.getElementById('logInfo')?.appendChild(para);
+      this.hideAlert()
+
     } else if (this.firingHex == hexNum && this.firing) {	// Deselect hex to fire at
       this.firingHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
       document.getElementById('logInfo')?.appendChild(para);
+
     } else if (this.firingHex != hexNum && this.firing) {		// Select hex to fire at
       this.firingHex = hexNum
       para.textContent = ('Activated Hex ' + hexNum);
       document.getElementById('logInfo')?.appendChild(para);
+      this.hideAlert()
+
     } else {	// Ignore input
       this.showAlert("Please select an action first")
     }    
@@ -208,6 +224,15 @@ export class HexMapComponent implements OnInit {
     var errorMsg = document.getElementById('error');
     alertBox!.style.visibility = "visible";
     errorMsg!.innerHTML = msg;
+  }
+
+  hideAlert() {
+    var alertBox = document.getElementById('alert');
+    alertBox!.style.visibility = 'hidden';
+  }
+
+  changeColor() {
+    
   }
 
 }

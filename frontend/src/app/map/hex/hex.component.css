@@ -26,3 +26,8 @@
     text-shadow: 0 0 5px #ffee10;
     cursor: pointer;
 }
+
+.hex:visited {
+    color: #00ff11;
+    text-shadow: 0 0 5px #00ff11;
+}
