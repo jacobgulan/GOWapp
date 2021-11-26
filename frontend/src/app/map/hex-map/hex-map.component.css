@@ -17,7 +17,7 @@
   zoom: 1.0;
 }
 
-.row,
+.mapRow,
 .rowEven {
   display: inline-flex;
   padding-top: 5px;
@@ -25,7 +25,7 @@
   overflow: hidden;
 }
 
-.row:nth-child(even),
+.mapRow:nth-child(even),
 .rowEven {
   margin-left: 1px;
 }
