@@ -12,7 +12,7 @@
         </div>
     </ng-container>
 </div>  -->
-
+<div style="padding-top: 150px;">
 <div *ngIf="map == 1" class="container">
   <div>
     <h2>Actions</h2>
@@ -28,7 +28,7 @@
 
     <div id="logInfo"></div>
   </div>
-  <div class="map-container" (click)="getHex($event)">
+  <div class="map-container" (click)="getHex($event)" style="color:black ;">
     <div class="mapRow" id="test">
       <app-hex text="water" color="{{ waterColor }}" class="noEffect"></app-hex>
       <app-hex text="sniperSpawn(1)" color="{{ grassColor }}" class="sniperSpawn"></app-hex>
@@ -300,3 +300,4 @@
     </div>
   </div>
 </div> -->
+</div>
