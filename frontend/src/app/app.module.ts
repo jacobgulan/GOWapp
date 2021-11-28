@@ -13,6 +13,7 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { AboutComponent } from './about/about.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HowToPlayComponent } from './how-to-play/how-to-play.component';
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HowToPlayComponent } from './how-to-play/how-to-play.component';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    NgbModule
+    NgbModule,
+    DragScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
