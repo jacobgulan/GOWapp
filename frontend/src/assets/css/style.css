@@ -2205,7 +2205,7 @@ ul {
 
 /* line 21, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_menu.scss */
 .main_menu .main-menu-item ul li .nav-link {
-  color: #fff;
+  color: black;
   font-size: 15px;
   padding: 43px 23px;
   font-family: "Poppins", sans-serif;
@@ -2216,7 +2216,7 @@ ul {
 
 /* line 29, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_menu.scss */
 .main_menu .main-menu-item ul li .nav-link:hover {
-  color: #fff;
+  color: black;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
