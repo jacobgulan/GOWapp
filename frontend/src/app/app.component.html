@@ -1,59 +1,73 @@
 <div class="body_bg">
-  <div class="body_bg">
-    <!--::header part start::-->
-    <header class="main_menu single_page_menu">
-        
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" routerLink="/"> <img src="assets/img/Gow_logo.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="menu_icon"><i class="fas fa-bars"></i></span>
-                        </button>
+    <div class="body_bg">
+        <!--::header part start::-->
+        <header class="main_menu single_page_menu">
 
-                        <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/game">Game</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" routerLink="/howtoplay">How to play</a>
-                              </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/">Contact us</a>
-                                </li>
-                                
-                            </ul>
-                            
-                          
-                     
-        <button class="button">Lets play</button>
-                        </div>
-                    </nav>
-                    
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" routerLink="/"> <img src="assets/img/Gow_logo.png" alt="logo"> </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/game">Game</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/howtoplay">How to play</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/">Contact us</a>
+                                    </li>
+                                </ul>
+                                <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Lets Play</button>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-                
             </div>
-        </div>
-        
-    </header>
+        </header>
+        <ng-template #content let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Launch Game</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="form-group">
+                        <label for="playerCount">Enter no. of soldiers</label>
+                        <div class="input-group">
+                            <input id="playerCount" formControlName="playerCount" class="form-control" placeholder="Number of soldier teams"
+                                name="dp">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Play</button>
+            </div>
+        </ng-template>
+        <main class="mainDiv">
+            <router-outlet></router-outlet>
+        </main>
 
-    <main class="mainDiv">
-      <router-outlet></router-outlet>
-    </main>
-  
-    <!-- <footer>
+        <!-- <footer>
       <a href="www.twicealivegames.com">Twice Alive games</a>
     </footer> -->
-  
-  </div>
+
+    </div>

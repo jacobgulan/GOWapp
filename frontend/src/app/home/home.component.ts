@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  form = new FormGroup({
-    "playerCount": new FormControl("",Validators.required)
-  })
+ 
   constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
