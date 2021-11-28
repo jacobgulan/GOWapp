@@ -1,14 +1,52 @@
 <!-- banner part start-->
 <div style="padding-top: 8%;">
-<div style="text-align: center;"><p style="color: red; font-size: x-large;">Know more about the game from the game creater below!!</p></div>
-
-<div style="width: 40%; height: 40%; text-align: center; margin-left: 29%;">
-  <div class="row align-items-center justify-content-between">
-    <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" controls>
-      <source
-        src="https://akshayproject.blob.core.windows.net/video/EditedVideo.mp4?sp=r&st=2021-11-24T00:19:50Z&se=2022-11-24T08:19:50Z&sv=2020-08-04&sr=b&sig=bc1uaQGYFbmG9vAP9i%2FpMPZKtR8%2B4C6PHYVWHBDqF5o%3D"
-        type="video/mp4">
-    </video>
+  <div style="text-align: center;">
+    <p style="color: red; font-size: x-large;">Know more about the game from the game creater below!!</p>
   </div>
-  <br>
-</div>
+
+  <div style="width: 40%; height: 40%; text-align: center; margin-left: 29%;">
+    <div class="row align-items-center justify-content-between">
+      <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" controls>
+        <source
+          src="https://akshayproject.blob.core.windows.net/video/EditedVideo.mp4?sp=r&st=2021-11-24T00:19:50Z&se=2022-11-24T08:19:50Z&sv=2020-08-04&sr=b&sig=bc1uaQGYFbmG9vAP9i%2FpMPZKtR8%2B4C6PHYVWHBDqF5o%3D"
+          type="video/mp4">
+      </video>
+    </div>
+    <br>
+  </div>
+  <div>
+    <p> Ghosts of War: Hunt for Pavlichenko is a competitive WWII themed board game where a Soviet Sniper and a team of
+      Nazi Soldiers vie against each other to achieve victory. The game is split up into two teams: the Sniper and the
+      Soldiers. The Sniper team only has one player and their win condition is to eliminate all of the Soldiers. The
+      Soldiers constitute the remaining players (up to 4) and their win condition is to capture the Sniper. The actions
+      are as such:</p>
+    <p>Sniper’s Actions</p>
+    <ul>
+      <li>Move the sniper</li>
+      <li>Shoot a soldier</li>
+      <li>Reload</li>
+      <li>Play an action card</li>
+    </ul>
+    <p>Soldier’s Actions</p>
+    <ul>
+      <li>Move a soldier</li>
+      <li>Search a hex</li>
+      <li>Play an action card</li>
+    </ul>
+    <p>Each player on the Soldiers team receives four soldiers that they may control. The Sniper only has their one
+      sniper. At the start of the game, the Soldiers may place their four soldiers in any of the German spawn points.
+      The Sniper also selects their starting spawn position from any of the Soviet spawn points. See figure below for
+      game board</p>
+    <div style="text-align: center; align-items: center;">
+      <img height="450px" width="450px"  src="../../assets/map.PNG" />
+    </div>
+    <p>The Sniper may only shoot a soldier if that soldier is on a diagonal of the Sniper’s current hex and the Sniper
+      has an unobstructed vision to the soldier. Vision may be obstructed by trees and sandbags. Water is impassable
+      terrain but does not obstruct vision. Trees are also impassable terrain.
+
+      The Sniper occupies a hex on the game board but has no physical representation, thus hiding their position to the
+      Soldiers. The Soldiers are able to determine the Sniper’s position by deducing the vectors on which a shot may
+      have come from. The Soldiers are able to capture the Sniper and win the game if one of their soldiers is occupying
+      the same hex as the Sniper and search the hex with that soldier. The Sniper wins once they have successfully
+      eliminated all of the Soldiers</p>
+  </div>
