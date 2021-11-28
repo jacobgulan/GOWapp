@@ -213,7 +213,7 @@ p {
   line-height: 29px;
   font-size: 12px;
   margin-bottom: 0px;
-  color: black;
+  /* color: black; */
   font-weight: 300;
 }
 
