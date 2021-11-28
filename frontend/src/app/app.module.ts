@@ -12,6 +12,7 @@ import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { AboutComponent } from './about/about.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HowToPlayComponent } from './how-to-play/how-to-play.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HexComponent,
     HexMapComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    HowToPlayComponent
   ],
   imports: [
     BrowserModule,
