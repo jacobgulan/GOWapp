@@ -74,12 +74,14 @@ export class HexMapComponent implements OnInit {
     if (localStorage.getItem('moving')=='false') {
       para.textContent = 'Movement action selected';
       document.getElementById('logInfo')?.appendChild(para);
+      this.changeColor();
       localStorage.setItem('moving','true');
       this.hideAlert()
       
     } else {
       para.textContent = 'Movement action deselected';
       document.getElementById('logInfo')?.appendChild(para);
+      this.changeColor();
       localStorage.setItem('moving','false');
       this.hideAlert()
     }
@@ -156,6 +158,7 @@ export class HexMapComponent implements OnInit {
       this.nextHex = -1;
       localStorage.setItem('moving','false');
       this.hideAlert()
+      this.changeColor();
 
     } else if (this.firing) {
       if (this.firingHex == -1) {
@@ -232,7 +235,15 @@ export class HexMapComponent implements OnInit {
   }
 
   changeColor() {
-    
+    let button = document.getElementById('movement');
+    if(button?.className == 'active'){
+      button.style.backgroundColor = 'red';
+      button.classList.remove('active');
+    }
+    else {
+      button!.style.backgroundColor = '#317efb';
+      button?.classList.add('active');
+    }
   }
 
 }
