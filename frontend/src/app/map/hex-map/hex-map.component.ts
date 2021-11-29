@@ -75,16 +75,12 @@ export class HexMapComponent implements OnInit {
     }
 
     if (localStorage.getItem('moving')=='false') {
-      para.textContent = 'Movement action selected';
-      document.getElementById('logInfo')?.appendChild(para);
-      this.changeColor();
+      this.changeColor('movement');
       localStorage.setItem('moving','true');
       this.hideAlert()
       
     } else {
-      para.textContent = 'Movement action deselected';
-      document.getElementById('logInfo')?.appendChild(para);
-      this.changeColor();
+      this.changeColor('movement');
       localStorage.setItem('moving','false');
       this.hideAlert()
     }
@@ -105,14 +101,12 @@ export class HexMapComponent implements OnInit {
     }
 
     if (!this.firing) {
-      para.textContent = 'Fire action selected';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.changeColor('fire');
       this.firing = true;
       this.hideAlert()
 
     } else {
-      para.textContent = 'Fire action deselected';
-      document.getElementById('logInfo')?.appendChild(para);
+      this.changeColor('fire');
       this.firing = false;
       this.hideAlert()
     }
@@ -136,7 +130,9 @@ export class HexMapComponent implements OnInit {
     } else {
       para.textContent = ('turn ' + this.currentTurn +': Reloaded gun');
       document.getElementById('logInfo')?.appendChild(para);
-      this.hideAlert()
+      this.hideAlert();
+      this.changeColor('reload');
+      setTimeout(() => {  this.changeColor('reload'); }, 800);
     }
   }
 
@@ -161,7 +157,9 @@ export class HexMapComponent implements OnInit {
       this.nextHex = -1;
       localStorage.setItem('moving','false');
       this.hideAlert()
-      this.changeColor();
+      this.changeColor('movement');
+      this.changeColor('confirm');
+      setTimeout(() => {  this.changeColor('confirm'); }, 800);
 
     } else if (this.firing) {
       if (this.firingHex == -1) {
@@ -174,6 +172,9 @@ export class HexMapComponent implements OnInit {
       this.firing = false;
       this.firingHex = -1;
       this.hideAlert()
+      this.changeColor('fire');
+      this.changeColor('confirm');
+      setTimeout(() => {  this.changeColor('confirm'); }, 800);
 
     } else {
       this.showAlert("Please select an action first")
@@ -237,8 +238,8 @@ export class HexMapComponent implements OnInit {
     alertBox!.style.visibility = 'hidden';
   }
 
-  changeColor() {
-    let button = document.getElementById('movement');
+  changeColor(action: any) {
+    let button = document.getElementById(action);
     if(button?.className == 'active'){
       button.style.backgroundColor = 'red';
       button.classList.remove('active');
@@ -251,4 +252,6 @@ export class HexMapComponent implements OnInit {
   next() {
     this.currentTurn += 1;
   }
+
+
 }

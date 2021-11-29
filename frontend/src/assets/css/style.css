@@ -2756,6 +2756,7 @@ ul {
   margin-bottom: 35px;
   position: relative;
   z-index: 1;
+  color: #fff;
 }
 
 @media (max-width: 991px) {
@@ -3657,6 +3658,7 @@ ul {
   line-height: 55px;
   margin-bottom: 8px;
   position: relative;
+  color: #fff;
 }
 
 @media (max-width: 576px) {
@@ -3699,6 +3701,7 @@ ul {
 .about_us .about_us_text p {
   line-height: 36px;
   margin-bottom: 57px;
+  color: #bebebe;
 }
 
 @media (max-width: 576px) {
@@ -6286,6 +6289,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
   margin-bottom: 30px;
   font-weight: 500;
+  color: #fff;
 }
 
 @media (max-width: 576px) {
