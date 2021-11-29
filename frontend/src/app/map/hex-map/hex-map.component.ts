@@ -21,10 +21,12 @@ export class HexMapComponent implements OnInit {
   nextHex = -1;
   firingHex = -1;
   firing = false;
+  currentTurn = 1;
   @ViewChild('movement') movement!: ElementRef;
   @ViewChild('fire') fire!: ElementRef;
   @ViewChild('reload') reload!: ElementRef;
   @ViewChild('confirm') confirmed!: ElementRef;
+  @ViewChild('nextTurn') nextTurn!: ElementRef;
 
   constructor(
     private elRef: ElementRef) {
@@ -43,6 +45,7 @@ export class HexMapComponent implements OnInit {
     this.reload.nativeElement.addEventListener('click', this.reloadParagraph.bind(this));
     this.confirmed.nativeElement.addEventListener('click', this.confirm.bind(this));
     this.movement.nativeElement.addEventListener('click', this.movementParagraph.bind(this));
+    this.nextTurn.nativeElement.addEventListener('click', this.next.bind(this));
   }
 
   getHex(e: any){
@@ -131,7 +134,7 @@ export class HexMapComponent implements OnInit {
       this.showAlert("Please deselect fire action")
       return;
     } else {
-      para.textContent = ('Reloaded gun');
+      para.textContent = ('turn ' + this.currentTurn +': Reloaded gun');
       document.getElementById('logInfo')?.appendChild(para);
       this.hideAlert()
     }
@@ -152,7 +155,7 @@ export class HexMapComponent implements OnInit {
         return;
       }
       para.textContent =
-        'Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
+      'turn ' + this.currentTurn +': Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.currHex = this.nextHex;
       this.nextHex = -1;
@@ -166,7 +169,7 @@ export class HexMapComponent implements OnInit {
         return;
       }
       para.textContent =
-        'Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
+      'turn ' + this.currentTurn +': Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.firing = false;
       this.firingHex = -1;
@@ -187,7 +190,7 @@ export class HexMapComponent implements OnInit {
       if ((hexNum == "sniperSpawn(1)") || (hexNum == "sniperSpawn(2)") ||
           (hexNum == "sniperSpawn(3)") || (hexNum == "sniperSpawn(4)")) {
             this.currHex = hexNum
-            para.textContent = ('Starting at Hex ' + hexNum);
+            para.textContent = ('turn ' + this.currentTurn +': Starting at Hex ' + hexNum);
             document.getElementById('logInfo')?.appendChild(para);
             this.hideAlert()
       } else {
@@ -245,5 +248,7 @@ export class HexMapComponent implements OnInit {
       button?.classList.add('active');
     }
   }
-
+  next() {
+    this.currentTurn += 1;
+  }
 }
