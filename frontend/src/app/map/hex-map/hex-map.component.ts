@@ -29,7 +29,6 @@ export class HexMapComponent implements OnInit {
   @ViewChild('fire') fire!: ElementRef;
   @ViewChild('reload') reload!: ElementRef;
   @ViewChild('confirm') confirmed!: ElementRef;
-  @ViewChild('nextTurn') nextTurn!: ElementRef;
   subscription : Subscription;
   browserRefresh: boolean = false;
   constructor(
@@ -64,7 +63,6 @@ export class HexMapComponent implements OnInit {
     this.reload.nativeElement.addEventListener('click', this.reloadParagraph.bind(this));
     this.confirmed.nativeElement.addEventListener('click', this.confirm.bind(this));
     this.movement.nativeElement.addEventListener('click', this.movementParagraph.bind(this));
-    this.nextTurn.nativeElement.addEventListener('click', this.next.bind(this));
   }
 
   getHex(e: any){
@@ -123,8 +121,6 @@ export class HexMapComponent implements OnInit {
       this.changeColor('fire');
       this.firing = true;
       this.hideAlert()
-      var audio = new Audio("/assets/fire.mp3");
-      audio.play();
 
     } else {
       this.changeColor('fire');
@@ -149,10 +145,11 @@ export class HexMapComponent implements OnInit {
       this.showAlert("Please deselect fire action")
       return;
     } else {
-      para.textContent = ('turn ' + this.currentTurn +': Reloaded gun');
+      para.textContent = ('Action ' + this.currentTurn +': Reloaded gun');
       document.getElementById('logInfo')?.appendChild(para);
       this.hideAlert();
       this.changeColor('reload');
+      this.next();
 
       setTimeout(() => {  this.changeColor('reload'); }, 800);
       var audio = new Audio("/assets/reload.mp3");
@@ -177,12 +174,13 @@ export class HexMapComponent implements OnInit {
       }
       this.setSniperPos(this.currHex, this.nextHex);
       para.textContent =
-      'turn ' + this.currentTurn +': Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
+      'Action ' + this.currentTurn +': Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.currHex = this.nextHex;
       this.nextHex = -1;
       localStorage.setItem('moving','false');
-      this.hideAlert()
+      this.hideAlert();
+      this.next();
       this.changeColor('movement');
       this.changeColor('confirm');
       setTimeout(() => {  this.changeColor('confirm'); }, 800);
@@ -193,14 +191,18 @@ export class HexMapComponent implements OnInit {
         return;
       }
       para.textContent =
-      'turn ' + this.currentTurn +': Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
+      'Action ' + this.currentTurn +': Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.firing = false;
       this.firingHex = -1;
       this.hideAlert()
       this.changeColor('fire');
       this.changeColor('confirm');
+      this.next();
+      var audio = new Audio("/assets/fire.mp3");
+      audio.play();
       setTimeout(() => {  this.changeColor('confirm'); }, 800);
+      
 
     } else {
       this.showAlert("Please select an action first")
@@ -218,7 +220,8 @@ export class HexMapComponent implements OnInit {
       if ((hexNum == "sniperSpawn(1)") || (hexNum == "sniperSpawn(2)") ||
           (hexNum == "sniperSpawn(3)") || (hexNum == "sniperSpawn(4)")) {
             this.currHex = hexNum
-            para.textContent = ('turn ' + this.currentTurn +': Starting at Hex ' + hexNum);
+            para.textContent = ('Action ' + this.currentTurn +': Starting at Hex ' + hexNum);
+            this.currentTurn += 1;
             this.setSniperPos(-1, hexNum);
             document.getElementById('logInfo')?.appendChild(para);
             this.hideAlert()
@@ -307,8 +310,26 @@ export class HexMapComponent implements OnInit {
     if(card == ''){
       card = e.target.alt;
     }
+
+    // Make sure other actions are not selected
+    if (this.currHex == -1) {
+      this.showAlert("Please select starting position first");
+      return;
+    }
+
+    if (this.firing) {
+      this.showAlert("Please deselect fire action")
+      return;
+    }
+
+    if (localStorage.getItem('moving')=='true') {
+      this.showAlert("Please deselect movement action")
+      return;
+    }
+
     let para = document.createElement('p');
-    para.textContent = ('turn ' + this.currentTurn +': card selected: ' + card);
+    para.textContent = ('Action ' + this.currentTurn +': Card selected: ' + card);
+    this.next();
     document.getElementById('logInfo')?.appendChild(para);
   }
 

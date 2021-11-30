@@ -80,16 +80,17 @@ button {
 .dropbtn1 {
   background-color: #fffb0b;
   color: rgb(0, 0, 0);
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: bold;
+  border-radius: 3px;
+
 }
 .dropbtn2 {
   background-color: #009921;
   color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: bold;
+  border-radius: 3px;
 }
 a img { display:none; }
 a:hover img { display:block; }
