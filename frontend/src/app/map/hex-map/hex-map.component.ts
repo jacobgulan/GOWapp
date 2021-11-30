@@ -293,5 +293,14 @@ export class HexMapComponent implements OnInit {
     this.currentTurn += 1;
   }
 
-
+  getCard(e: any){
+    e.preventDefault();
+    let card =  e.target.textContent;
+    if(card == ''){
+      card = e.target.alt;
+    }
+    let para = document.createElement('p');
+    para.textContent = ('turn ' + this.currentTurn +': card selected: ' + card);
+    document.getElementById('logInfo')?.appendChild(para);
+  }
 }

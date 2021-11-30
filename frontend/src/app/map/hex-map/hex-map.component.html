@@ -18,13 +18,13 @@
     <h2>Actions</h2>
     <div class="dropdown">
       <button class="dropbtn2">Cards</button>
-      <div class="dropdown-content">
-        <a href="#">Amphibian<img src="/assets/Cards/Sniper cards/Green cards/Amphibian.png" /></a>
-        <a href="#">Hit And Run<img src="/assets/Cards/Sniper cards/Green cards/HitAndRun.png" /></a>
-        <a href="#">Intentional Bluff<img src="/assets/Cards/Sniper cards/Green cards/IntentionalBluff.png" /></a>   
-        <a href="#">Make-A-Run<img src="/assets/Cards/Sniper cards/Green cards/MakeARun.png" /></a>
-        <a href="#">On The Fly<img src="/assets/Cards/Sniper cards/Green cards/OnTheFly.png" /></a>
-        <a href="#">Two In The Chamber<img src="/assets/Cards/Sniper cards/Green cards/TwoInTheChamber.png" /></a>
+      <div class="dropdown-content" (click)="getCard($event)">
+        <a href="#">Amphibian<img src="/assets/Cards/Sniper cards/Green cards/Amphibian.png" alt='Amphibian'/></a>
+        <a href="#">Hit And Run<img src="/assets/Cards/Sniper cards/Green cards/HitAndRun.png" alt='Hit And Run'/></a>
+        <a href="#">Intentional Bluff<img src="/assets/Cards/Sniper cards/Green cards/IntentionalBluff.png" alt='Intentional Bluff'/></a>   
+        <a href="#">Make-A-Run<img src="/assets/Cards/Sniper cards/Green cards/MakeARun.png" alt='Make-A-Run'/></a>
+        <a href="#">On The Fly<img src="/assets/Cards/Sniper cards/Green cards/OnTheFly.png" alt='On The Fly'/></a>
+        <a href="#">Two In The Chamber<img src="/assets/Cards/Sniper cards/Green cards/TwoInTheChamber.png" alt='Two In The Chamber'/></a>
       </div>
     </div>
     <button class="active" id="movement" #movement>Movement</button>
@@ -34,18 +34,17 @@
     <button class="active" id="nextTurn" #nextTurn>Next Turn</button>
     <div class="dropdown">
       <button class="dropbtn1">Cards</button>
-      <div class="dropdown-content">
-    <a href="#">Beaten<img src="/assets/Cards/Sniper cards/Yellow cards/Beaten.png" /></a>
-    <a href="#">Between Trees<img src="/assets/Cards/Sniper cards/Yellow cards/BetweenTrees.png" /></a>
-    <a href="#">BobbyTrap<img src="/assets/Cards/Sniper cards/Yellow cards/BobbyTrap.png" /></a>   
-    <a href="#">Break Cover<img src="/assets/Cards/Sniper cards/Yellow cards/BreakCover.png" /></a>
-    <a href="#">Grenade<img src="/assets/Cards/Sniper cards/Yellow cards/Grenade.png" /></a>
-    <a href="#">Landminer<img src="/assets/Cards/Sniper cards/Yellow cards/Landmine.png" /></a>
-    
-    <a href="#">Scorched Earth<img src="/assets/Cards/Sniper cards/Yellow cards/ScorchedEarth.png" /></a>   
-    <a href="#">Shoot To Wound<img src="/assets/Cards/Sniper cards/Yellow cards/ShootToWound.png" /></a>
-    <a href="#">Sneak Away<img src="/assets/Cards/Sniper cards/Yellow cards/SneakAway.png" /></a>
-    <a href="#">TwoBirds One Stone<img src="/assets/Cards/Sniper cards/Yellow cards/TwoBirdOneStone.png" /></a>
+      <div class="dropdown-content" (click)='getCard($event)'>
+    <a href="#">Beaten<img src="/assets/Cards/Sniper cards/Yellow cards/Beaten.png" alt='Beaten'/></a>
+    <a href="#">Between Trees<img src="/assets/Cards/Sniper cards/Yellow cards/BetweenTrees.png" alt='Between Trees'/></a>
+    <a href="#">BobbyTrap<img src="/assets/Cards/Sniper cards/Yellow cards/BobbyTrap.png" alt='BobbyTrap'/></a>   
+    <a href="#">Break Cover<img src="/assets/Cards/Sniper cards/Yellow cards/BreakCover.png" alt='Break Cover'/></a>
+    <a href="#">Grenade<img src="/assets/Cards/Sniper cards/Yellow cards/Grenade.png" alt='Grenade'/></a>
+    <a href="#">Landminer<img src="/assets/Cards/Sniper cards/Yellow cards/Landmine.png" alt='Landminer'/></a>
+    <a href="#">Scorched Earth<img src="/assets/Cards/Sniper cards/Yellow cards/ScorchedEarth.png" alt='Scorched Earth'/></a>   
+    <a href="#">Shoot To Wound<img src="/assets/Cards/Sniper cards/Yellow cards/ShootToWound.png" alt='Shoot To Wound'/></a>
+    <a href="#">Sneak Away<img src="/assets/Cards/Sniper cards/Yellow cards/SneakAway.png" alt='Sneak Away'/></a>
+    <a href="#">Two Birds One Stone<img src="/assets/Cards/Sniper cards/Yellow cards/TwoBirdOneStone.png" alt='TwoBirds One Stone'/></a>
   </div>
   </div>
     <div class="alert" id="alert">
@@ -151,13 +150,13 @@
     <h2>Actions</h2>
     <div class="dropdown">
       <button class="dropbtn2">Cards</button>
-      <div class="dropdown-content">
-        <a href="#">Amphibian<img src="/assets/Cards/Sniper cards/Green cards/Amphibian.png" /></a>
-        <a href="#">Hit And Run<img src="/assets/Cards/Sniper cards/Green cards/HitAndRun.png" /></a>
-        <a href="#">Intentional Bluff<img src="/assets/Cards/Sniper cards/Green cards/IntentionalBluff.png" /></a>   
-        <a href="#">Make-A-Run<img src="/assets/Cards/Sniper cards/Green cards/MakeARun.png" /></a>
-        <a href="#">On The Fly<img src="/assets/Cards/Sniper cards/Green cards/OnTheFly.png" /></a>
-        <a href="#">Two In The Chamber<img src="/assets/Cards/Sniper cards/Green cards/TwoInTheChamber.png" /></a>
+      <div class="dropdown-content" (click)='getCard($event)'>
+        <a href="#">Amphibian<img src="/assets/Cards/Sniper cards/Green cards/Amphibian.png" alt='Amphibian'/></a>
+        <a href="#">Hit And Run<img src="/assets/Cards/Sniper cards/Green cards/HitAndRun.png" alt='Hit And Run' /></a>
+        <a href="#">Intentional Bluff<img src="/assets/Cards/Sniper cards/Green cards/IntentionalBluff.png" alt='Intentional Bluff' /></a>   
+        <a href="#">Make-A-Run<img src="/assets/Cards/Sniper cards/Green cards/MakeARun.png" alt='Make-A-Run' /></a>
+        <a href="#">On The Fly<img src="/assets/Cards/Sniper cards/Green cards/OnTheFly.png" alt='On The Fly' /></a>
+        <a href="#">Two In The Chamber<img src="/assets/Cards/Sniper cards/Green cards/TwoInTheChamber.png" alt='Two In The Chamber' /></a>
       </div>
     </div>
     <button class="active" id="movement" #movement>Movement</button>
@@ -167,18 +166,18 @@
     <button class="active" id="nextTurn" #nextTurn>Next Turn</button>
     <div class="dropdown">
       <button class="dropbtn1">Cards</button>
-      <div class="dropdown-content">
-    <a href="#">Beaten<img src="/assets/Cards/Sniper cards/Yellow cards/Beaten.png" /></a>
-    <a href="#">Between Trees<img src="/assets/Cards/Sniper cards/Yellow cards/BetweenTrees.png" /></a>
-    <a href="#">BobbyTrap<img src="/assets/Cards/Sniper cards/Yellow cards/BobbyTrap.png" /></a>   
-    <a href="#">Break Cover<img src="/assets/Cards/Sniper cards/Yellow cards/BreakCover.png" /></a>
-    <a href="#">Grenade<img src="/assets/Cards/Sniper cards/Yellow cards/Grenade.png" /></a>
-    <a href="#">Landminer<img src="/assets/Cards/Sniper cards/Yellow cards/Landmine.png" /></a>
+      <div class="dropdown-content" (click)='getCard($event)'>
+    <a href="#">Beaten<img src="/assets/Cards/Sniper cards/Yellow cards/Beaten.png" alt='Beaten'/></a>
+    <a href="#">Between Trees<img src="/assets/Cards/Sniper cards/Yellow cards/BetweenTrees.png" alt='Between Trees'/></a>
+    <a href="#">BobbyTrap<img src="/assets/Cards/Sniper cards/Yellow cards/BobbyTrap.png" alt='BobbyTrap'/></a>   
+    <a href="#">Break Cover<img src="/assets/Cards/Sniper cards/Yellow cards/BreakCover.png" alt='Break Cover'/></a>
+    <a href="#">Grenade<img src="/assets/Cards/Sniper cards/Yellow cards/Grenade.png" alt='Grenade'/></a>
+    <a href="#">Landminer<img src="/assets/Cards/Sniper cards/Yellow cards/Landmine.png" alt='Landminer'/></a>
     
-    <a href="#">Scorched Earth<img src="/assets/Cards/Sniper cards/Yellow cards/ScorchedEarth.png" /></a>   
-    <a href="#">Shoot To Wound<img src="/assets/Cards/Sniper cards/Yellow cards/ShootToWound.png" /></a>
-    <a href="#">Sneak Away<img src="/assets/Cards/Sniper cards/Yellow cards/SneakAway.png" /></a>
-    <a href="#">TwoBirds One Stone<img src="/assets/Cards/Sniper cards/Yellow cards/TwoBirdOneStone.png" /></a>
+    <a href="#">Scorched Earth<img src="/assets/Cards/Sniper cards/Yellow cards/ScorchedEarth.png" alt='Scorched Earth'/></a>   
+    <a href="#">Shoot To Wound<img src="/assets/Cards/Sniper cards/Yellow cards/ShootToWound.png" alt='Shoot To Wound'/></a>
+    <a href="#">Sneak Away<img src="/assets/Cards/Sniper cards/Yellow cards/SneakAway.png" alt='Sneak Away'/></a>
+    <a href="#">TwoBirds One Stone<img src="/assets/Cards/Sniper cards/Yellow cards/TwoBirdOneStone.png" alt='TwoBirds One Stone'/></a>
   </div>
   </div>
     <div class="alert" id="alert">
@@ -283,13 +282,13 @@
     <h2>Actions</h2>
     <div class="dropdown">
       <button class="dropbtn2">Cards</button>
-      <div class="dropdown-content">
-        <a href="#">Amphibian<img src="/assets/Cards/Sniper cards/Green cards/Amphibian.png" /></a>
-        <a href="#">Hit And Run<img src="/assets/Cards/Sniper cards/Green cards/HitAndRun.png" /></a>
-        <a href="#">Intentional Bluff<img src="/assets/Cards/Sniper cards/Green cards/IntentionalBluff.png" /></a>   
-        <a href="#">Make-A-Run<img src="/assets/Cards/Sniper cards/Green cards/MakeARun.png" /></a>
-        <a href="#">On The Fly<img src="/assets/Cards/Sniper cards/Green cards/OnTheFly.png" /></a>
-        <a href="#">Two In The Chamber<img src="/assets/Cards/Sniper cards/Green cards/TwoInTheChamber.png" /></a>
+      <div class="dropdown-content" (click)='getCard($event)'>
+        <a href="#">Amphibian<img src="/assets/Cards/Sniper cards/Green cards/Amphibian.png" alt='Amphibian'/></a>
+        <a href="#">Hit And Run<img src="/assets/Cards/Sniper cards/Green cards/HitAndRun.png" alt='Hit And Run'/></a>
+        <a href="#">Intentional Bluff<img src="/assets/Cards/Sniper cards/Green cards/IntentionalBluff.png" alt='Intentional Bluff'/></a>   
+        <a href="#">Make-A-Run<img src="/assets/Cards/Sniper cards/Green cards/MakeARun.png" alt='Make-A-Run'/></a>
+        <a href="#">On The Fly<img src="/assets/Cards/Sniper cards/Green cards/OnTheFly.png" alt='On The Fly'/></a>
+        <a href="#">Two In The Chamber<img src="/assets/Cards/Sniper cards/Green cards/TwoInTheChamber.png" alt='Two In The Chamber'/></a>
       </div>
     </div>
     <button class="active" id="movement" #movement>Movement</button>
@@ -299,18 +298,18 @@
     <button class="active" id="nextTurn" #nextTurn>Next Turn</button>
     <div class="dropdown">
       <button class="dropbtn1">Cards</button>
-      <div class="dropdown-content">
-    <a href="#">Beaten<img src="/assets/Cards/Sniper cards/Yellow cards/Beaten.png" /></a>
-    <a href="#">Between Trees<img src="/assets/Cards/Sniper cards/Yellow cards/BetweenTrees.png" /></a>
-    <a href="#">BobbyTrap<img src="/assets/Cards/Sniper cards/Yellow cards/BobbyTrap.png" /></a>   
-    <a href="#">Break Cover<img src="/assets/Cards/Sniper cards/Yellow cards/BreakCover.png" /></a>
-    <a href="#">Grenade<img src="/assets/Cards/Sniper cards/Yellow cards/Grenade.png" /></a>
-    <a href="#">Landminer<img src="/assets/Cards/Sniper cards/Yellow cards/Landmine.png" /></a>
+      <div class="dropdown-content" (click)='getCard($event)'>
+    <a href="#">Beaten<img src="/assets/Cards/Sniper cards/Yellow cards/Beaten.png" alt='Beaten'/></a>
+    <a href="#">Between Trees<img src="/assets/Cards/Sniper cards/Yellow cards/BetweenTrees.png" alt='Between Trees'/></a>
+    <a href="#">BobbyTrap<img src="/assets/Cards/Sniper cards/Yellow cards/BobbyTrap.png" alt='BobbyTrap'/></a>   
+    <a href="#">Break Cover<img src="/assets/Cards/Sniper cards/Yellow cards/BreakCover.png" alt='Break Cover'/></a>
+    <a href="#">Grenade<img src="/assets/Cards/Sniper cards/Yellow cards/Grenade.png" alt='Grenade'/></a>
+    <a href="#">Landminer<img src="/assets/Cards/Sniper cards/Yellow cards/Landmine.png" alt='Landminer'/></a>
     
-    <a href="#">Scorched Earth<img src="/assets/Cards/Sniper cards/Yellow cards/ScorchedEarth.png" /></a>   
-    <a href="#">Shoot To Wound<img src="/assets/Cards/Sniper cards/Yellow cards/ShootToWound.png" /></a>
-    <a href="#">Sneak Away<img src="/assets/Cards/Sniper cards/Yellow cards/SneakAway.png" /></a>
-    <a href="#">TwoBirds One Stone<img src="/assets/Cards/Sniper cards/Yellow cards/TwoBirdOneStone.png" /></a>
+    <a href="#">Scorched Earth<img src="/assets/Cards/Sniper cards/Yellow cards/ScorchedEarth.png" alt='Scorched Earth'/></a>   
+    <a href="#">Shoot To Wound<img src="/assets/Cards/Sniper cards/Yellow cards/ShootToWound.png" alt='Shoot To Wound'/></a>
+    <a href="#">Sneak Away<img src="/assets/Cards/Sniper cards/Yellow cards/SneakAway.png" alt='Sneak Away'/></a>
+    <a href="#">Two Birds One Stone<img src="/assets/Cards/Sniper cards/Yellow cards/TwoBirdOneStone.png" alt='Two Birds One Stone'/></a>
   </div>
   </div>
     <div class="alert" id="alert">
