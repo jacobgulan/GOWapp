@@ -9,7 +9,6 @@ export class HexComponent implements OnInit {
   @Input() color!: string;
   @Input() text!: string;
   @Input() id!: string;
-  @Output() location = new EventEmitter<string>();
 
   
   constructor() { }

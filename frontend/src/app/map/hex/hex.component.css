@@ -31,3 +31,7 @@
     color: #00ff11;
     text-shadow: 0 0 5px #00ff11;
 }
+
+p {
+    margin-bottom: -2px;
+}

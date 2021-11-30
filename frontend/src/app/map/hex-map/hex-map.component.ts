@@ -150,6 +150,7 @@ export class HexMapComponent implements OnInit {
         this.showAlert("Please select hex to move to");
         return;
       }
+      this.setSniperPos(this.currHex, this.nextHex);
       para.textContent =
       'turn ' + this.currentTurn +': Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
         document.getElementById('logInfo')?.appendChild(para);
@@ -192,6 +193,7 @@ export class HexMapComponent implements OnInit {
           (hexNum == "sniperSpawn(3)") || (hexNum == "sniperSpawn(4)")) {
             this.currHex = hexNum
             para.textContent = ('turn ' + this.currentTurn +': Starting at Hex ' + hexNum);
+            this.setSniperPos(-1, hexNum);
             document.getElementById('logInfo')?.appendChild(para);
             this.hideAlert()
       } else {
@@ -236,6 +238,20 @@ export class HexMapComponent implements OnInit {
   hideAlert() {
     var alertBox = document.getElementById('alert');
     alertBox!.style.visibility = 'hidden';
+  }
+
+  setSniperPos(preHex: any, nextHex: any){
+    let para = document.createElement('p');
+    let next = document.getElementById(nextHex)?.firstChild;
+    let pre = document.getElementById(preHex)?.firstChild
+    para.textContent = 'SNIPER'
+    if(preHex == -1){
+      next?.appendChild(para);
+    }
+    else {
+      pre?.lastChild?.remove();
+      next?.appendChild(para);
+    }
   }
 
   changeColor(action: any) {
