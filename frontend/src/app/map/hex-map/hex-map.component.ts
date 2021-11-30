@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import {
   Component,
   ElementRef,
@@ -227,11 +228,13 @@ export class HexMapComponent implements OnInit {
     } else if (this.nextHex == hexNum && moving =='true') {	// Deselect hex to move to
       this.nextHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
+      this.deactivateHex(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
 
     } else if (this.nextHex != hexNum && moving =='true') {	// Select hex to move to
       this.nextHex = hexNum
       para.textContent = ('Activated Hex ' + hexNum);
+      this.activiteHex(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
       this.hideAlert()
 
@@ -302,5 +305,14 @@ export class HexMapComponent implements OnInit {
     let para = document.createElement('p');
     para.textContent = ('turn ' + this.currentTurn +': card selected: ' + card);
     document.getElementById('logInfo')?.appendChild(para);
+  }
+
+  activiteHex(hex: any){
+    let active = document.getElementById(hex);
+    console.log(active);
+  }
+
+  deactivateHex(hex: any){
+    let deactivate = document.getElementById(hex);
   }
 }
