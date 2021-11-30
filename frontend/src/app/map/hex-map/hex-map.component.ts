@@ -211,6 +211,7 @@ export class HexMapComponent implements OnInit {
   activate(hexNum: any) {
     let para = document.createElement('p');
     var moving = localStorage.getItem('moving');
+    console.log(hexNum)
 
     if (this.currHex == -1) {	// Select starting location
       // Restrict to sniper spawn points
@@ -230,12 +231,11 @@ export class HexMapComponent implements OnInit {
       para.textContent = ('Deactivated Hex ' + hexNum);
       this.deactivateHex(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
+      
 
     } else if (this.nextHex != hexNum && moving =='true') {	// Select hex to move to
       this.nextHex = hexNum
-      para.textContent = ('Activated Hex ' + hexNum);
-      this.activiteHex(hexNum);
-      document.getElementById('logInfo')?.appendChild(para);
+      this.activateHex(hexNum);
       this.hideAlert()
 
     } else if (this.firingHex == hexNum && this.firing) {	// Deselect hex to fire at
@@ -276,7 +276,12 @@ export class HexMapComponent implements OnInit {
       next?.appendChild(para);
     }
     else {
+      console.log(pre?.lastChild)
       pre?.lastChild?.remove();
+      if (pre?.lastChild?.textContent == "ACTIVE") {
+        pre?.lastChild?.remove();
+      }
+      console.log(pre?.lastChild)
       next?.appendChild(para);
     }
   }
@@ -307,12 +312,37 @@ export class HexMapComponent implements OnInit {
     document.getElementById('logInfo')?.appendChild(para);
   }
 
-  activiteHex(hex: any){
-    let active = document.getElementById(hex);
-    console.log(active);
+  activateHex(hex: any){
+    let para = document.createElement('p');
+    let activate = document.getElementById(hex)?.firstChild;
+    para.textContent = 'ACTIVE'
+    activate?.appendChild(para);
+
+
+    //console.log(active);
+    
+    /*
+    let para = document.createElement('p');
+    let next = document.getElementById(nextHex)?.firstChild;
+    let pre = document.getElementById(preHex)?.firstChild
+    para.textContent = 'SNIPER'
+    if(preHex == -1){
+      next?.appendChild(para);
+    }
+    else {
+      pre?.lastChild?.remove();
+      next?.appendChild(para);
+    }
+    */
   }
 
+
   deactivateHex(hex: any){
-    let deactivate = document.getElementById(hex);
+    let para = document.createElement('p');
+    let deactivate = document.getElementById(hex)?.firstChild;
+    console.log("Method: " + deactivate)
+    if (deactivate?.lastChild?.textContent == hex + 'ACTIVE') {
+      deactivate?.lastChild?.remove();
+    }
   }
 }
