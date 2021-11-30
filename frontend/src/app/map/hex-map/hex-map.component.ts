@@ -190,6 +190,7 @@ export class HexMapComponent implements OnInit {
       'Action ' + this.currentTurn +': Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.currHex = this.nextHex;
+      this.oldHex = -1;
       this.nextHex = -1;
       localStorage.setItem('moving','false');
       this.hideAlert();
@@ -210,6 +211,7 @@ export class HexMapComponent implements OnInit {
       this.firing = false;
       this.changeGridColor(this.firingHex);
       this.firingHex = -1;
+      this.oldHex = -1;
       this.hideAlert()
       this.changeColor('fire');
       this.changeColor('confirm');
