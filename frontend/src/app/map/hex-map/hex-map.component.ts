@@ -4,6 +4,8 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { HexComponent } from '../hex/hex.component';
 
 @Component({
@@ -27,13 +29,29 @@ export class HexMapComponent implements OnInit {
   @ViewChild('reload') reload!: ElementRef;
   @ViewChild('confirm') confirmed!: ElementRef;
   @ViewChild('nextTurn') nextTurn!: ElementRef;
-
+  subscription : Subscription;
+  browserRefresh: boolean = false;
   constructor(
-    private elRef: ElementRef) {
+    private elRef: ElementRef,private router: Router) {
+      this.subscription = router.events.subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          this.browserRefresh = !router.navigated;
+          if(this.browserRefresh){
+            window.location.reload();
+          }
+        }
+      });
       localStorage.setItem('moving','false');
      }
 
   ngOnInit(): void { 
+    var mapno = localStorage.getItem('map')
+    if(mapno != null){
+      this.map = parseInt(mapno);
+    }
+    else{
+      this.map = 1;
+    }
   }
 
   ngAfterContentInit(){

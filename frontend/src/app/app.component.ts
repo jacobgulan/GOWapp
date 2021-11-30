@@ -19,12 +19,16 @@ export class AppComponent {
   title = 'GOW';
   closeResult = '';
   form = new FormGroup({
-    "playerCount": new FormControl("",Validators.required)
+    "mapId": new FormControl("Map1",Validators.required)
   })
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
     const queryParam = this.form.value;
     console.log(queryParam);
+    localStorage.setItem('map',queryParam.mapId);
+    if(this.router.url=='/game'){
+      window.location.reload();
+    }
     this.router.navigate(['/game'],{state:{data:'queryParam'}});
     }, (reason) => {
     });
