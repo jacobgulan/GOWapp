@@ -25,6 +25,7 @@ export class HexMapComponent implements OnInit {
   firingHex = -1;
   firing = false;
   currentTurn = 1;
+  oldHex = -1;
   @ViewChild('movement') movement!: ElementRef;
   @ViewChild('fire') fire!: ElementRef;
   @ViewChild('reload') reload!: ElementRef;
@@ -172,6 +173,8 @@ export class HexMapComponent implements OnInit {
         this.showAlert("Please select hex to move to");
         return;
       }
+
+      this.changeGridColor(this.nextHex);
       this.setSniperPos(this.currHex, this.nextHex);
       para.textContent =
       'Action ' + this.currentTurn +': Moved from Hex ' + this.currHex + ' to Hex ' + this.nextHex;
@@ -190,10 +193,12 @@ export class HexMapComponent implements OnInit {
         this.showAlert("Please select hex to fire at");
         return;
       }
+      
       para.textContent =
       'Action ' + this.currentTurn +': Fired at Hex ' + this.firingHex + ' from Hex ' + this.currHex;
         document.getElementById('logInfo')?.appendChild(para);
       this.firing = false;
+      this.changeGridColor(this.firingHex);
       this.firingHex = -1;
       this.hideAlert()
       this.changeColor('fire');
@@ -232,25 +237,33 @@ export class HexMapComponent implements OnInit {
     } else if (this.nextHex == hexNum && moving =='true') {	// Deselect hex to move to
       this.nextHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
-      this.deactivateHex(hexNum);
+      //this.deactivateHex(hexNum);
+      this.changeGridColor(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
       
 
     } else if (this.nextHex != hexNum && moving =='true') {	// Select hex to move to
-      this.nextHex = hexNum
-      this.activateHex(hexNum);
+      console.log(this.nextHex);
+      console.log(hexNum);
+      //this.activateHex(hexNum);
+      this.nextHex = hexNum;
+      para.textContent = ('Activated Hex ' + hexNum);
+      this.changeGridColor(hexNum);
       this.hideAlert()
+      document.getElementById('logInfo')?.appendChild(para);
 
     } else if (this.firingHex == hexNum && this.firing) {	// Deselect hex to fire at
       this.firingHex = -1
       para.textContent = ('Deactivated Hex ' + hexNum);
+      this.changeGridColor(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
 
     } else if (this.firingHex != hexNum && this.firing) {		// Select hex to fire at
       this.firingHex = hexNum
       para.textContent = ('Activated Hex ' + hexNum);
-      document.getElementById('logInfo')?.appendChild(para);
+      this.changeGridColor(hexNum);
       this.hideAlert()
+      document.getElementById('logInfo')?.appendChild(para);
 
     } else {	// Ignore input
       this.showAlert("Please select an action first")
@@ -300,6 +313,18 @@ export class HexMapComponent implements OnInit {
       button?.classList.add('active');
     }
   }
+
+  changeGridColor(hex: any) {
+    let activated = document.getElementById(hex);
+
+    if (activated!.style.color == 'maroon') {
+      activated!.style.color = 'black';
+    } else {
+      activated!.style.color = 'maroon';
+    }
+      
+  }
+
   next() {
     this.currentTurn += 1;
   }
@@ -333,12 +358,13 @@ export class HexMapComponent implements OnInit {
     document.getElementById('logInfo')?.appendChild(para);
   }
 
+  /*
   activateHex(hex: any){
     let para = document.createElement('p');
     let activate = document.getElementById(hex)?.firstChild;
     para.textContent = 'ACTIVE'
     activate?.appendChild(para);
-
+*/
 
     //console.log(active);
     
@@ -354,10 +380,10 @@ export class HexMapComponent implements OnInit {
       pre?.lastChild?.remove();
       next?.appendChild(para);
     }
-    */
+    
   }
-
-
+*/
+/*
   deactivateHex(hex: any){
     let para = document.createElement('p');
     let deactivate = document.getElementById(hex)?.firstChild;
@@ -366,4 +392,5 @@ export class HexMapComponent implements OnInit {
       deactivate?.lastChild?.remove();
     }
   }
+  */
 }
