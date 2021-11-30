@@ -296,7 +296,7 @@ a:focus, .button:focus, button:focus, .btn:focus {
 /* line 147, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_common.scss */
 .section_tittle h2 {
   font-size: 45px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   line-height: 50px;
   font-weight: 500;
   position: relative;
@@ -3658,7 +3658,7 @@ ul {
   line-height: 55px;
   margin-bottom: 8px;
   position: relative;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 576px) {
@@ -3701,7 +3701,7 @@ ul {
 .about_us .about_us_text p {
   line-height: 36px;
   margin-bottom: 57px;
-  color: #bebebe;
+  color: #000000;
 }
 
 @media (max-width: 576px) {
@@ -4228,18 +4228,19 @@ ul {
   /* line 36, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
   .footer_part .single_footer_part h4 {
     margin-bottom: 15px;
+    color: #000;
   }
 }
 
 /* line 56, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
 .footer_part .single_footer_part p {
   margin-bottom: 10px;
-  color: #bebebe;
+  color: #000000;
 }
 
 /* line 63, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
 .footer_part .single_footer_part .list-unstyled li a {
-  color: #bebebe;
+  color: #000000;
   margin-bottom: 10px;
   display: inline-block;
   font-family: "Poppins", sans-serif;
@@ -4368,7 +4369,7 @@ ul {
 
 /* line 184, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
 .footer_part .copyright_text p {
-  color: #888;
+  color: rgb(0, 0, 0);
 }
 
 /* line 188, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
@@ -4417,7 +4418,7 @@ ul {
 
 /* line 75, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_elements.scss */
 .sample-text-area {
-  background: #fff;
+  background: rgb(0, 0, 0);
   padding: 100px 0 70px 0;
 }
 
@@ -4478,7 +4479,7 @@ h1, h2, h3, h4, h5, h6 {
 .typography h4,
 .typography h5,
 .typography h6 {
-  color: #828bb2;
+  color: #000000;
 }
 
 /* line 137, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_elements.scss */
@@ -6289,7 +6290,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
   margin-bottom: 30px;
   font-weight: 500;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 576px) {
@@ -6316,12 +6317,12 @@ h1, h2, h3, h4, h5, h6 {
 /* line 56, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
 .footer_part .single_footer_part p {
   margin-bottom: 10px;
-  color: #bebebe;
+  color: #000000;
 }
 
 /* line 63, ../../01 cl html template/03_jun 2019/186_Gaiming_html/sass/_footer.scss */
 .footer_part .single_footer_part .list-unstyled li a {
-  color: #bebebe;
+  color: #000000;
   margin-bottom: 10px;
   display: inline-block;
   font-family: "Poppins", sans-serif;
@@ -6363,7 +6364,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
   margin-top: 20px;
   width: 100%;
-  background-color: #f9f9fe;
+  background-color: #000000;
   border: 1px solid transparent;
 }
 
@@ -6374,7 +6375,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 20px;
   height: 39.3px;
   text-align: center;
-  color: #fff;
+  color: rgb(0, 0, 0);
   border-radius: 0;
   line-height: 10px;
   background-size: 200% auto;
