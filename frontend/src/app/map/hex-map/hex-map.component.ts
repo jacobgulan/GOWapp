@@ -101,6 +101,11 @@ export class HexMapComponent implements OnInit {
       this.changeColor('movement');
       localStorage.setItem('moving','false');
       this.hideAlert()
+
+      if (this.oldHex != -1) {
+        this.changeGridColor(this.oldHex)
+      }
+      this.oldHex = -1;
     }
   }
 
@@ -127,6 +132,11 @@ export class HexMapComponent implements OnInit {
       this.changeColor('fire');
       this.firing = false;
       this.hideAlert()
+
+      if (this.oldHex != -1) {
+        this.changeGridColor(this.oldHex)
+      }
+      this.oldHex = -1;
     }
   }
 
@@ -235,32 +245,38 @@ export class HexMapComponent implements OnInit {
       }
 
     } else if (this.nextHex == hexNum && moving =='true') {	// Deselect hex to move to
-      this.nextHex = -1
-      para.textContent = ('Deactivated Hex ' + hexNum);
+      this.nextHex = -1;
+      this.oldHex = -1;
       //this.deactivateHex(hexNum);
       this.changeGridColor(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
       
 
     } else if (this.nextHex != hexNum && moving =='true') {	// Select hex to move to
-      console.log(this.nextHex);
-      console.log(hexNum);
+      if (this.oldHex != -1) {
+        this.changeGridColor(this.oldHex)
+      }
+      this.oldHex = hexNum;
+      
       //this.activateHex(hexNum);
       this.nextHex = hexNum;
-      para.textContent = ('Activated Hex ' + hexNum);
       this.changeGridColor(hexNum);
       this.hideAlert()
       document.getElementById('logInfo')?.appendChild(para);
 
     } else if (this.firingHex == hexNum && this.firing) {	// Deselect hex to fire at
-      this.firingHex = -1
-      para.textContent = ('Deactivated Hex ' + hexNum);
+      this.firingHex = -1;
+      this.oldHex = -1;
+      
       this.changeGridColor(hexNum);
       document.getElementById('logInfo')?.appendChild(para);
 
     } else if (this.firingHex != hexNum && this.firing) {		// Select hex to fire at
       this.firingHex = hexNum
-      para.textContent = ('Activated Hex ' + hexNum);
+      if (this.oldHex != -1) {
+        this.changeGridColor(this.oldHex)
+      }
+      this.oldHex = hexNum;
       this.changeGridColor(hexNum);
       this.hideAlert()
       document.getElementById('logInfo')?.appendChild(para);
