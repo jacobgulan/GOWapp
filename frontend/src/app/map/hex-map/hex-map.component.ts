@@ -122,6 +122,8 @@ export class HexMapComponent implements OnInit {
       this.changeColor('fire');
       this.firing = true;
       this.hideAlert()
+      var audio = new Audio("/assets/fire.mp3");
+      audio.play();
 
     } else {
       this.changeColor('fire');
@@ -150,12 +152,16 @@ export class HexMapComponent implements OnInit {
       document.getElementById('logInfo')?.appendChild(para);
       this.hideAlert();
       this.changeColor('reload');
+
       setTimeout(() => {  this.changeColor('reload'); }, 800);
+      var audio = new Audio("/assets/reload.mp3");
+      audio.play();
     }
   }
 
   // Confirm action (does not confirm reload)
   confirm() {
+   
     let para = document.createElement('p');
 
     if (this.currHex == -1) {

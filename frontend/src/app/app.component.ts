@@ -13,6 +13,7 @@ export class AppComponent {
   /**
    * constructor
    */
+  
   public constructor(private titleService: Title,private modalService: NgbModal, private router: Router) {
     this.titleService.setTitle('GOW')
   }
@@ -33,4 +34,11 @@ export class AppComponent {
     }, (reason) => {
     });
   }
+
+   changeImage() {
+  ;
+   
 }
+}
+
+ 

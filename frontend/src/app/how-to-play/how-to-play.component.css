@@ -1,13 +1,14 @@
 
 
  h1 {
-  font-family: Arial;
-  color: red;
+  font-family: Courier New;
+  color: rgb(0, 0, 0);
   text-align: center;
+  font-style: bold;
  }
  .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 100%);
+  grid-template-columns: repeat(53, 100%);
   overflow: hidden;
   scroll-behavior: smooth;
  }
@@ -24,7 +25,7 @@
  }
  .wrapper section .item:hover {
   margin: 0 40px;
-  transform: scale(1.2);
+  transform: scale(1.1);
  }
  .wrapper section a {
   position: absolute;
@@ -33,7 +34,7 @@
   font-size: 6em;
   background: black;
   width: 80px;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   z-index: 1;
  }
@@ -47,10 +48,10 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(77, 69, 69) 100%);
  }
  @media only screen and (max-width: 600px) {
   a.arrow__btn {
   display: none;
   }
-}
+ }
